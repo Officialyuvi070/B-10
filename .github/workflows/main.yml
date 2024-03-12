@@ -54,8 +54,8 @@ jobs:
 #       run: node my.js
 
       
-Example_Environment_Variables:
-  runs-on: ubuntu-latest
+  Example_Environment_Variables:
+    runs-on: ubuntu-latest
 
     env:
       FIRST_VARIABLE: "12345"
@@ -63,7 +63,7 @@ Example_Environment_Variables:
 
     steps:
       - name: Print First Environment Variable
-        run: echo "First_Variable: ${{ env.FIRST_VARIABLE }}"
+        run: echo "First_Variable:${{ env.FIRST_VARIABLE }}"
 
       - name: Print Second Environment Variable
-        run: echo "Second_Variable: ${{ env.SECOND_VARIABLE }}"
+        run: echo "Second_Variable:${{ env.SECOND_VARIABLE }}"
