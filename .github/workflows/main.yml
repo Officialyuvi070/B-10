@@ -1,9 +1,7 @@
 name: Python Workflow
 
 on:
-  push:
-    branches:
-      - main  # or whichever branch you want to trigger the action on
+  workflow_dispatch:
 
 jobs:
   run_python_program:
