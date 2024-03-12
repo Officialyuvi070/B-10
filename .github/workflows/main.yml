@@ -31,8 +31,8 @@ jobs:
       with:
         node-version: '14'  # Specify the Node.js version you need
 
-    - name: Install dependencies
-      run: npm install
+    # - name: Install dependencies
+    #   run: npm install
 
     - name: Run JavaScript program
       run: node my.js
