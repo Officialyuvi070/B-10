@@ -1,10 +1,10 @@
-name: Python Workflow
+name: Python and JavaScript Workflow
 
 on:
   push:
 
 jobs:
-  run_python_program:
+  Run_Python_Program:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,17 +14,25 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'  # Specify the Python version you need
+        python-version: '3.x'
 
     - name: Run Python program
-      run: python batch10.py  # Replace my_program.py with the name of your Python program
+      run: python batch10.py
 
-      # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
- 
-      # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build, 
-        echo test, and deploy your project.
+  Run_Javascript_Program:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'  # Specify the Node.js version you need
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run JavaScript program
+      run: node my.js
