@@ -3,52 +3,67 @@ name: Python and JavaScript Workflow
 on:
   push:
   
-# This defines the trigger for the workflow. In this case, the workflow will run whenever there's a push event to the repository.
-# Events: push, pull, workflow_dispatch
+# # This defines the trigger for the workflow. In this case, the workflow will run whenever there's a push event to the repository.
+# # Events: push, pull, workflow_dispatch
 
 jobs:
 
-# Defines a collection of tasks to be executed as part of this workflow.
+# # Defines a collection of tasks to be executed as part of this workflow.
 
-  Run_Python_Program:
-# Defines a job named "Run_Python_Program".
+#   Run_Python_Program:
+# # Defines a job named "Run_Python_Program".
 
-    runs-on: ubuntu-latest
-# Specifies the operating system environment for this job. In this case, it's set to run on the latest version of Ubuntu.
+#     runs-on: ubuntu-latest
+# # Specifies the operating system environment for this job. In this case, it's set to run on the latest version of Ubuntu.
 
-    steps: #Specifies a series of steps to be executed as part of this job.
+#     steps: #Specifies a series of steps to be executed as part of this job.
     
-    - name: Checkout repository
-      uses: actions/checkout@v2
-# This step checks out the code from the repository into the runner machine so that subsequent steps can access the code.    
+#     - name: Checkout repository
+#       uses: actions/checkout@v2
+# # This step checks out the code from the repository into the runner machine so that subsequent steps can access the code.    
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-# This step sets up the Python environment on the runner machine. It uses the actions/setup-python action with version 2.0. 
-# It specifies Python version '3.x', which will ensure that Python 3.x is installed and available for subsequent steps.
+#     - name: Set up Python
+#       uses: actions/setup-python@v2
+#       with:
+#         python-version: '3.x'
+# # This step sets up the Python environment on the runner machine. It uses the actions/setup-python action with version 2.0. 
+# # It specifies Python version '3.x', which will ensure that Python 3.x is installed and available for subsequent steps.
 
-    - name: Run Python program
-      run: python batch10.py     
-# This step runs the Python program named batch10.py using the python command.
+#     - name: Run Python program
+#       run: python batch10.py     
+# # This step runs the Python program named batch10.py using the python command.
 
 
-  Run_Javascript_Program:
-  # Defines a job named "Run_Javascript_Program". 
+#   Run_Javascript_Program:
+#   # Defines a job named "Run_Javascript_Program". 
   
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Checkout repository
+#       uses: actions/checkout@v2
+
+#     - name: Setup Node.js
+#       uses: actions/setup-node@v2
+#       with:
+#         node-version: '14'
+# # This step sets up the Node.js environment on the runner machine. It uses the actions/setup-node action with version 2.0. It specifies Node.js version '14', 
+# # which will ensure that Node.js 14.x is installed and available for subsequent steps.
+
+#     - name: Run JavaScript program
+#       run: node my.js
+
+      
+Example_Environment_Variables:
+  runs-on: ubuntu-latest
+
+    env:
+      FIRST_VARIABLE: "12345"
+      SECOND_VARIABLE: "54321"
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Print First Environment Variable
+        run: echo "First_Variable: ${{ env.FIRST_VARIABLE }}"
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-# This step sets up the Node.js environment on the runner machine. It uses the actions/setup-node action with version 2.0. It specifies Node.js version '14', 
-# which will ensure that Node.js 14.x is installed and available for subsequent steps.
-
-    - name: Run JavaScript program
-      run: node my.js
+      - name: Print Second Environment Variable
+        run: echo "Second_Variable: ${{ env.SECOND_VARIABLE }}"
