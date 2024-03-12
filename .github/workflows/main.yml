@@ -66,4 +66,4 @@ jobs:
         run: echo "First_Variable:${{ env.FIRST_VARIABLE }}"
 
       - name: Print Second Environment Variable
-        run: echo "Second_Variable:${{ env.SECOND_VARIABLE }}"
+        run: echo "Second_Variable:$SECOND_VARIABLE"
