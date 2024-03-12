@@ -57,18 +57,17 @@ jobs:
   Example_Environment_Variables:
     runs-on: ubuntu-latest
 
-    # env:
-    #   FIRST_VARIABLE: "12345"
-    #   SECOND_VARIABLE: "54321"
+    env:
+      # FIRST_VARIABLE: "12345"
+      # SECOND_VARIABLE: "54321"
+      YUVI: ${{ secrets.YUVI }}
 
     steps:
-      - name: Print First Environment Variable
-        run: echo "First_Variable:${{ env.FIRST_VARIABLE }}"
+      # - name: Print First Environment Variable
+      #   run: echo "First_Variable:${{ env.FIRST_VARIABLE }}"
 
-      - name: Print Second Environment Variable
-        run: echo "Second_Variable:$SECOND_VARIABLE"
+      # - name: Print Second Environment Variable
+      #   run: echo "Second_Variable:$SECOND_VARIABLE"
         
       - name: Print Third Environment Variable
         run: echo "Third:$YUVI"
-
-
