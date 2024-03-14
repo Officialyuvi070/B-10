@@ -1,7 +1,7 @@
 name: Python and JavaScript Workflow
 # This specifies the name of the workflow.
 on:
-  push:
+  workflow_dispatch:
   
 # # This defines the trigger for the workflow. In this case, the workflow will run whenever there's a push event to the repository.
 # # Events: push, pull, workflow_dispatch
