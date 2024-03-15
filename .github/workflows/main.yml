@@ -5,7 +5,9 @@ on:
   
 # # This defines the trigger for the workflow. In this case, the workflow will run whenever there's a push event to the repository.
 # # Events: push, pull, workflow_dispatch
-
+env:
+  MY_VARIABLE: "Batch-10"
+  
 jobs:
 
 # Defines a collection of tasks to be executed as part of this workflow.
@@ -32,6 +34,12 @@ jobs:
     - name: Run Python program
       run: python batch10.py     
 # This step runs the Python program named batch10.py using the python command.
+
+    - name: Print environment variable
+      run: echo "My variable value is ${{ env.MY_VARIABLE }}"
+
+    - name: Print First Environment Variable
+      run: echo "First_Variable:--> ${{ env.FIRST_VARIABLE }}"
 
 
   Run_Javascript_Program:
