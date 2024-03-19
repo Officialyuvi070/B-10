@@ -45,7 +45,7 @@ jobs:
   Run_Javascript_Program:
   # Defines a job named "Run_Javascript_Program". 
   
-    # needs: Run_Python_Program
+    needs: Run_Python_Program
     runs-on: ubuntu-latest
 
     steps:
@@ -64,7 +64,7 @@ jobs:
 
       
   Example_Environment_Variables:
-    # needs: Run_Javascript_Program
+    needs: Run_Javascript_Program
     runs-on: ubuntu-latest
 
     env:
@@ -79,7 +79,7 @@ jobs:
         run: echo "Second_Variable:--> $SECOND_VARIABLE"
     
   secret_example:
-    # needs: Example_Environment_Variables
+    needs: Example_Environment_Variables
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
