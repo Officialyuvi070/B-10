@@ -66,6 +66,7 @@ jobs:
   Example_Environment_Variables:
     needs: Run_Javascript_Program
     runs-on: ubuntu-latest
+    if: ${{ always() }}
 
     env:
       FIRST_VARIABLE: "12345"
