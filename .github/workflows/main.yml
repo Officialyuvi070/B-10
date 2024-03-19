@@ -32,7 +32,7 @@ jobs:
 # It specifies Python version '3.x', which will ensure that Python 3.x is installed and available for subsequent steps.
 
     - name: Run Python program
-      run: python batch1.py     
+      run: python batch10.py     
 # This step runs the Python program named batch10.py using the python command.
 
     - name: Print environment variable
@@ -66,7 +66,6 @@ jobs:
   Example_Environment_Variables:
     needs: Run_Javascript_Program
     runs-on: ubuntu-latest
-    if: ${{ always() }}
 
     env:
       FIRST_VARIABLE: "12345"
@@ -79,16 +78,16 @@ jobs:
       - name: Print Second Environment Variable
         run: echo "Second_Variable:--> $SECOND_VARIABLE"
     
-  secret_example:
-    needs: Example_Environment_Variables
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+  # secret_example:
+  #   needs: Example_Environment_Variables
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
       
-      - name: Use a secret variable
-        env:
-          SECRET_TOKEN: ${{ secrets.MY_SECRET_TOKEN }}
-        run: |
-          echo "The secret token is $SECRET_TOKEN"
+  #     - name: Use a secret variable
+  #       env:
+  #         SECRET_TOKEN: ${{ secrets.MY_SECRET_TOKEN }}
+  #       run: |
+  #         echo "The secret token is $SECRET_TOKEN"
         
