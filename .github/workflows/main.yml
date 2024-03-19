@@ -32,7 +32,7 @@ jobs:
 # It specifies Python version '3.x', which will ensure that Python 3.x is installed and available for subsequent steps.
 
     - name: Run Python program
-      run: python batch10.py     
+      run: python batch1.py     
 # This step runs the Python program named batch10.py using the python command.
 
     - name: Print environment variable
